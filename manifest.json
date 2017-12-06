@@ -1,0 +1,20 @@
+{
+	"manifest_version": "1",
+	"api_version": "1",
+	"name": "MyIP",
+	"description": "Get your current external ip address.",
+	"developer_name": "Rolf Koenders",
+	"icon": "images/icon.png",
+	"options": {
+		"query_debounce": 0.1
+	},
+	"preferences": [
+		{
+			"id": "ip_kw",
+			"type": "keyword",
+			"name": "ip",
+			"description": "Get current IP address.",
+			"default_value": "ip"
+		}
+	]
+}

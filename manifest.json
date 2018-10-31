@@ -15,6 +15,19 @@
 			"name": "ip",
 			"description": "Get current IP address.",
 			"default_value": "ip"
+		},{
+			"id": "ip_show",
+			"type": "select",
+			"name": "Ip to show",
+			"description": "Which ip address should by show",
+			"default_value": "all",
+			"options": [{
+				"value": "all",
+				"text": "Public and local"
+			}, {
+				"value": "local",
+				"text": "Local"
+			}]
 		}
 	]
 }

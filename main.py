@@ -1,4 +1,4 @@
-import urllib2
+import urllib.request, urllib.error, urllib.parse
 import logging
 from ulauncher.api.client.Extension import Extension
 from ulauncher.api.client.EventListener import EventListener
@@ -19,7 +19,7 @@ class MyIpExtension(Extension):
 class KeywordQueryEventListener(EventListener):
 
 	def on_event(self, event, extension):
-		ip = urllib2.urlopen("http://icanhazip.com/").read()
+		ip = urllib.request.urlopen("http://icanhazip.com/").read()
 		logger.debug('Got external ip: %s', ip)
 
 		items = []

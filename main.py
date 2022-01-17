@@ -1,4 +1,4 @@
-import urllib2
+import urllib.request, urllib.error, urllib.parse
 import logging
 from ulauncher.api.client.Extension import Extension
 from ulauncher.api.client.EventListener import EventListener
@@ -19,12 +19,12 @@ class MyIpExtension(Extension):
 class KeywordQueryEventListener(EventListener):
 
 	def on_event(self, event, extension):
-		ip = urllib2.urlopen("http://icanhazip.com/").read()
+		ip = urllib.request.urlopen("http://icanhazip.com/").read()
 		logger.debug('Got external ip: %s', ip)
 
 		items = []
 		items.append(ExtensionResultItem(icon='images/icon.png',
-										name='External IP: %s' % ip,
+										name='External IP: %s' % ip.decode(),
 										description='Press \'enter\' to copy to clipboard.',
 										on_enter=CopyToClipboardAction(ip)))
 

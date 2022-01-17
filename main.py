@@ -24,7 +24,7 @@ class KeywordQueryEventListener(EventListener):
 
 		items = []
 		items.append(ExtensionResultItem(icon='images/icon.png',
-										name='External IP: %s' % ip,
+										name='External IP: %s' % ip.decode(),
 										description='Press \'enter\' to copy to clipboard.',
 										on_enter=CopyToClipboardAction(ip)))
 
